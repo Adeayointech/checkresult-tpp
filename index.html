@@ -43,9 +43,23 @@
             margin-top: 20px;
             font-size: 1.1em;
         }
+
+        .logo-container{
+            max-width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo{
+            max-width: 35%;
+        }
     </style>
 </head>
 <body>
+
+    <div class="logo-container">
+        <img src="TPP.png" alt="logo" class="logo">
+    </div>
     <div class="container">
         <h1>Check Exam Results</h1>
         <input type="text" id="userId" placeholder="Enter your Registration Number">
@@ -55,15 +69,15 @@
 
     <script>
         const resultsData = {
-            "009/2024-co": { name: "Adeniji Toluwalase", score: "31%", status: "Failed" },
-            "012/2024-ak": { name: "Obatayo Christianah", score: "26%", status: "Failed" },
-            "005/2024-vo": { name: "Ojo Ayomide", score: "06%", status: "Failed" },
-            "010/2024-gb": {name: "Ajoba Goodluck", score: "43", status: "Poor"},
-            "002/2024-kv": {name: "Ajoba Victor", score: "75", status: "Honors"},
-            "011/2024-os": {name: "Ameh Rachel", score: "63", status: "Pass"},
-            "010/2024-st": {name: "Ameh Destiny", score: "50", status: "Pass"},
-            "003/2024-ik": {name: "Otuya Isaac", score: "47", status: "Poor"},
-            "004/2024-dg": {name: "Otuya Destiny", score: "80", status: "Honors"}
+            "009/2024/co": { name: "Adeniji Toluwalase", score: "31%", status: "Failed" },
+            "012/2024/ak": { name: "Obatayo Christianah", score: "26%", status: "Failed" },
+            "005/2024/vo": { name: "Ojo Ayomide", score: "06%", status: "Failed" },
+            "010/2024/gb": {name: "Ajoba Goodluck", score: "43", status: "Poor"},
+            "002/2024/kv": {name: "Ajoba Victor", score: "75", status: "Honors"},
+            "011/2024/os": {name: "Ameh Rachel", score: "63", status: "Pass"},
+            "010/2024/st": {name: "Ameh Destiny", score: "50", status: "Pass"},
+            "003/2024/ik": {name: "Otuya Isaac", score: "47", status: "Poor"},
+            "004/2024/dg": {name: "Otuya Destiny", score: "80", status: "Honors"}
         };
 
         function checkResult() {
