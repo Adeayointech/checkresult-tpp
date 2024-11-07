@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Check Exam Results</h1>
+        <input type="text" id="userId" placeholder="Enter your Registration Number">
+        <button onclick="checkResult()">Check Result</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const resultsData = {
+            "009/2024-co": { name: "Adeniji Toluwalase", score: "31%", status: "Failed" },
+            "012/2024-ak": { name: "Obatayo Christianah", score: "26%", status: "Failed" },
+            "005/2024-vo": { name: "Ojo Ayomide", score: "06%", status: "Failed" },
+            "010/2024-gb": {name: "Ajoba Goodluck", score: "43", status: "Poor"},
+            "002/2024-kv": {name: "Ajoba Victor", score: "75", status: "Honors"},
+            "011/2024-os": {name: "Ameh Rachel", score: "63", status: "Pass"},
+            "010/2024-st": {name: "Ameh Destiny", score: "50", status: "Pass"},
+            "003/2024-ik": {name: "Otuya Isaac", score: "47", status: "Poor"},
+            "004/2024-dg": {name: "Otuya Destiny", score: "80", status: "Honors"}
+        };
+
+        function checkResult() {
+            const userId = document.getElementById("userId").value;
+            const result = resultsData[userId];
+
+            const resultDiv = document.getElementById("result");
+            if (result) {
+                resultDiv.innerHTML = `
+                    <p>Name: ${result.name}</p>
+                    <p>Score: ${result.score}</p>
+                    <p>Status: ${result.status}</p>
+                `;
+            } else {
+                resultDiv.innerHTML = "<p>No results found for the entered ID.</p>";
+            }
+        }
+    </script>
+</body>
+</html>
